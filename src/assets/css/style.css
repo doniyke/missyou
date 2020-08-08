@@ -1,0 +1,115 @@
+/*Global Styles*/
+
+.mb-100 {
+    margin-bottom: 60px !important;
+}
+
+
+/*Homepage Styles*/
+
+section#header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/milk.jpg'), no-repeat no-repeat;
+    background-size: cover !important;
+    height: inherit !important;
+    background-position: fixed !important;
+}
+
+
+/*nav link color*/
+
+.color {
+    color: #4B0082;
+}
+
+
+/*buttons*/
+
+.b-color {
+    background-color: #4B0082 !important;
+    color: white !important;
+    white-space: nowrap !important;
+    padding-left: 5px !important;
+    padding-right: 10px !important;
+    margin-bottom: 3px !important;
+}
+
+.b-color:hover {
+    color: white !important;
+}
+
+
+/*image styles*/
+
+.d-image {
+    height: 200px !important;
+    overflow: hidden;
+}
+
+
+/*nav-links*/
+
+.nav-link:hover {
+    color: #4B0082 !important;
+}
+
+
+/*card border*/
+
+.c-border {
+    border-color: grey;
+}
+
+
+/*footer background*/
+
+.footer-bg {
+    background: linear-gradient(to right, indigo, indigo)
+}
+
+.new-alert:hover {
+    color: white !important;
+    background-color: #4B0082 !important;
+}
+
+.line {
+    line-height: 1.6;
+}
+
+.small-screen {
+    display: none;
+}
+
+.OR {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 250px !important;
+    }
+    .my-ul {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+    .hide {
+        display: none;
+    }
+    .show {
+        margin: auto;
+        text-align: center;
+    }
+    .my-p {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .small-screen {
+        display: inline-block;
+    }
+    .large-screen {
+        display: none;
+    }
+    .OR {
+        display: block;
+        margin: auto;
+    }
+}
