@@ -2,53 +2,9 @@
     <div class="">
         <div class="bg">
             <div class="text-center container">
-                <h1 class="white-text py-3">Dashboard</h1> 
+                <h1 class="white-text py-3">Dashboard In Progress</h1> 
             </div>
-               <form class="my-5 mx-md-5" action="">
-
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <!-- Material form login -->
-          <div class="card z-depth-5" style="background : transparent">
-
-            <!--Card content-->
-            <div class="card-body ">
-
-              <!-- Form -->
-              <form class="text-center">
-
-                <!-- Name -->
-                <input type="email"  class="form-control mb-4" ref="email" placeholder="Email">
-                
-                <!-- Email -->
-                <input type="password" class="form-control" ref="password" placeholder="Password">
-                
-                
-                <small id="passwordHelpBlock" class="form-text text-right blue-text">
-                  <a href="">Recover Password</a>
-                </small>
-
-                <div v-if="loading && loginErr == ''">
-                  Loading ........
-                </div>
-                <div class="alert alert-danger" v-if="loginErr != '' && loading == false" >
-                  {{loginErr}}
-                </div>
-                <div class="text-center">
-                  <button type="button" class="btn btn-black btn-rounded my-4 waves-effect"  @click.prevent="login()">Login</button>
-                </div>
-
-              </form>
-              <!-- Form -->
-
-            </div>
-
-          </div>
-          <!-- Material form login -->
-        </div>
-      </div>
-
-    </form>
+            
         </div>
     </div>   
 </template>
