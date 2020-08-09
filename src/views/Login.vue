@@ -71,7 +71,7 @@
 
 <script>
 import axios from "axios"
-import router from "@/router"
+// import router from "@/router"
 
 export default {
   data(){
@@ -103,7 +103,7 @@ export default {
             localStorage.setItem('userName', response.data.user["name"]);
             localStorage.setItem('userToken', response.data["token"]);
             localStorage.setItem('userId', response.data.user["_id"]);
-            router.push("/dashboard")
+            window.location="/dashboard";
         }else{
           this.loading = false
           this.loginErr = response.data["message"];

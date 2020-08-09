@@ -102,7 +102,7 @@ export default {
       logOut(){
         localStorage.setItem('emailUser',null)
         localStorage.clear();
-        this.$router.push("/login")
+        window.location="/login"
       }
     },
     mounted(){
