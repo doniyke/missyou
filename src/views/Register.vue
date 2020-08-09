@@ -33,7 +33,7 @@
                   {{loginErr}}
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-black btn-rounded my-4 waves-effect"  @click.prevent="register()">Login</button>
+                  <button type="button" class="btn btn-black btn-rounded my-4 waves-effect"  @click.prevent="register()">Register</button>
                 </div>
 
               </form>

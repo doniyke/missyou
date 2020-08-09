@@ -19,7 +19,7 @@ const routes = [{
             import ( /* webpackChunkName: "about" */ '../views/About.vue')
     },
     {
-        path: '/memorial',
+        path: '/memorial/:id',
         name: 'ViewMemorial',
         // route level code-splitting
         // this generates a separate chunk (memorial.[hash].js) for this route
@@ -54,7 +54,18 @@ const routes = [{
         component: () =>
             import ( /* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
         meta: { requiresAuthUser: true }
-    }
+    },
+    {
+        path: '/create',
+        name: 'Create',
+        // route level code-splitting
+        // this generates a separate chunk (create.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "create" */ '../views/Create.vue'),
+        meta: { requiresAuthUser: true }
+    },
+
 
 
 ]

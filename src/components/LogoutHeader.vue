@@ -16,11 +16,6 @@
             
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
-              <form class="form-inline">
-              <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              </div>
-            </form>
              <router-link to="/" exact>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Home
@@ -28,12 +23,12 @@
                   </a>
                 </li>
               </router-link>
-               <router-link to="/about" exact>
-               
+              <router-link to="/dashboard" exact v-if="emailUser != null">
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Dashboard</a>
               </li>
-               </router-link>
+              </router-link>
+               
               <router-link to="/register" exact v-if="emailUser === null">
               <li class="nav-item">
                 <a class="nav-link" href="#">Register</a>
@@ -44,6 +39,17 @@
                 <a class="nav-link" href="#">Login</a>
               </li>
               </router-link>
+              <router-link to="/create" exact v-if="emailUser != null">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Create Memorial</a>
+              </li>
+              </router-link>
+              <router-link to="/about" exact>
+               
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+               </router-link>
              
               <li class="nav-item" v-if="emailUser !== null">
                 <a class="nav-link" href="#" @click="logOut">Logout</a>
@@ -98,6 +104,9 @@ export default {
         localStorage.clear();
         this.$router.push("/login")
       }
+    },
+    mounted(){
+      this.emailUser = localStorage.getItem('emailUser')
     }
 }
 </script>

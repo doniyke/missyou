@@ -2,10 +2,58 @@
     <div class="">
         <div class="bg">
             <div class="text-center container">
-                <h1 class="white-text py-3">Dashboard In Progress</h1> 
+                <h1 class="white-text py-3">Welcome Back {{name}}</h1> 
+                <router-link :to="{ name: 'Create'}">
+                  <button class="btn btn-black btn-rounded my-4 waves-effect">
+                    Create A Memorial Page
+                  </button>
+                </router-link>
             </div>
             
         </div>
+
+      <div class="container py-5">
+        <div class="text-center">
+          <h1 class="purple-text pb-2">My Memorials</h1>
+          <div v-if="allmemorials.length < 1" class="alert alert-danger">
+            You have not created any memorial page yet.
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-5" v-for="memorial in allmemorials" :key="memorial._id">
+              <!-- Card Wider -->
+              <div class="card card-cascade wider z-depth-3">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay h-100">
+                  <img class="card-img-top" :src="memorial.image" alt="Card image cap">
+                  <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center pb-0">
+
+                  <!-- Title -->
+                  <h4 class="card-title purple-text"><strong>{{memorial.firstname}} {{memorial.lastname}}</strong></h4>
+                  <!-- Subtitle -->
+                  <h5 class="text-muted pb-2"><span></span>{{getYear(memorial.dateOfBirth) }} - {{ getYear(memorial.dateOfDeath)}}</h5>
+                  <!-- Text -->
+                  <!-- Card footer -->
+                  <div class="card-footer text-muted text-center">
+                      <router-link :to="{ name: 'ViewMemorial', params : {id : memorial._id} }">
+                        <button class="btn btn-black btn-sm btn-block ">View Memorial</button>
+                      </router-link>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- Card Wider -->
+            </div>
+          </div>
+        </div>  
+      </div>
     </div>   
 </template>
 
@@ -27,63 +75,37 @@
 
 <script>
 import axios from "axios"
-import router from "@/router"
 
 export default {
   data(){
     return{
       loading:false,
-      loginErr : ''
+      name :  localStorage.getItem('name'),
+      userToken : localStorage.getItem('userToken'),
+      allmemorials : [],
     }
   },
-  methods:{
-    login(){ 
-      this.loading = true
-      let data = {   
-          email: this.$refs.email.value,    
-          password: this.$refs.password.value
-          
-      } 
-      
-      const config = {
+  mounted(){
+    const config = {
         headers: {
+          Authorization: this.userToken,
           'Content-Type': 'application/json'
         }
       }
 
-      axios.post("https://missyou-api.azurewebsites.net/api/v1/auth/login",data, config)   
+      axios.get("https://missyou-api.azurewebsites.net/api/v1/auth/user-memorials", config)   
       .then((response) => { 
         
         if(response.data["status"] === 200){
-            localStorage.setItem('emailUser', response.data.user["email"]);
-            localStorage.setItem('userName', response.data.user["name"]);
-            localStorage.setItem('userToken', response.data["token"]);
-            localStorage.setItem('userId', response.data.user["_id"]);
-            router.push("/dashboard")
+            this.allmemorials = response.data.memorials;
         }else{
-          this.loading = false
-          this.loginErr = response.data["message"];
+          // this.loading = false
+          // this.loginErr = response.data["message"];
         }
         
           
       
       })    
-      .catch((errors) => {  
-        if (errors.response) {
-            this.loading = false
-            // console.log(data)
-            if(errors.response.data["errors"]){
-              let err = Object.values(errors.response.data["errors"][0])
-              this.loginErr = err[0]
-            }
-            
-          }
-          
-        
-          // this.errored = true    
-      }) 
-
-    }
   }
 }
 </script>
