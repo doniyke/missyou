@@ -56,7 +56,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="btn btn-sm btn-purple" href="#">Donate</a>
+                <a class="btn btn-sm btn-purple" href="#" @click="pay()">Donate</a>
               </li>
             </ul>
             <!-- Links -->
@@ -95,7 +95,8 @@ export default {
     name : 'LogoutHeader',
     data(){
       return{
-        emailUser : localStorage.getItem('emailUser')
+        emailUser : localStorage.getItem('emailUser'),
+        FlutterwaveCheckout:null
       }
     },
     methods : {
@@ -103,7 +104,8 @@ export default {
         localStorage.setItem('emailUser',null)
         localStorage.clear();
         window.location="/login"
-      }
+      },
+      
     },
     mounted(){
       this.emailUser = localStorage.getItem('emailUser')
