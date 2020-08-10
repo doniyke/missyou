@@ -22,7 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
+```
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -32,6 +32,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 *****
 <!-- PROJECT LOGO -->
 <br />
+
+```
+
 <p align="center">
   <a href="https://github.com/doniyke/missyou">
     <span width="80" height="80"> 💜 </span>
@@ -48,7 +51,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   </p>
 </p>
 <!-- TABLE OF CONTENTS -->
+
 ## Table of Contents
+```
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
   - [Built With](#built-with)
@@ -59,23 +64,32 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
+```
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+```
 Photos may get lost, stories can be forgotten, memorials will fade with years. Today, everyone can use the Internet to create an online memorial page and share memories, photos and other media with one another. With an online memorial sites, dedicated to lives of those we love and now have lost, would help to bring families together. These memorial websites would also help our children learn about the lives of their ancestors and preserve memories of them. And so, we launched **[missYou](https://missyou-eta.vercel.app)**, a place where people could create a free online memorial to collect and share memories of the people they have lost.
 Here's why:
 * You should gather friends & family after the death of a loved one to support each other and celebrate their life forever
 **Our goal is to gather family and friends after the loss of a loved one to support each other and celebrate their life together.**
+```
+
 ### Built With
+```
 **Frontend:** - [Github Repo](https://github.com/doniyke/missyou)
 * [VueJs](https://vuejs.org/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Vercel](https://vercel.com/)
+```
+```
 **Backend:** - [Github Repo](https://github.com/vincentiroleh/missYou)
 * [NodeJs](https://nodejs.org/en/)
 * [ExpressJs](https://expressjs.com)
 * [Auth0 Passport](http://www.passportjs.org)
 * [Azure](https://azure.microsoft.com)
 * [MongoDB](https://www.mongodb.com)
+```
 <!-- GETTING STARTED -->
 ## Getting Started
 ### Prerequisites
