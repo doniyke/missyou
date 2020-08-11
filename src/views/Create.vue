@@ -162,7 +162,7 @@ export default {
         formData.append('webAddress',this.$refs.webAddress.value);
         formData.append('about',this.about);
         formData.append('biography',this.biography);
-        formData.append('image',this.$refs.image.value);
+        // formData.append('image',this.$refs.image.value);
         console.log(formData)
 
           
@@ -170,7 +170,7 @@ export default {
       
       const config = {
         headers: {
-            Authorization: this.userToken, 
+            Authorization:'Bearer ' + this.userToken, 
           'Content-Type': 'application/json'
         }
       }

@@ -106,7 +106,8 @@ export default {
             window.location="/dashboard";
         }else{
           this.loading = false
-          this.loginErr = response.data["message"];
+          this.loginErr = response.data["error"];
+          console.log(this.loginErr)
         }
         
           
@@ -115,7 +116,8 @@ export default {
       .catch((errors) => {  
         if (errors.response) {
             this.loading = false
-            // console.log(data)
+            console.log(data)
+            this.loginErr = errors.response.data["error"]
             if(errors.response.data["errors"]){
               let err = Object.values(errors.response.data["errors"][0])
               this.loginErr = err[0]

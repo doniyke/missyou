@@ -88,7 +88,7 @@ export default {
   mounted(){
     const config = {
         headers: {
-          Authorization: this.userToken,
+          Authorization:'Bearer ' + this.userToken,
           'Content-Type': 'application/json'
         }
       }
