@@ -59,7 +59,9 @@
             <router-link to="/dashboard">
               <button class="btn btn-purple">Get Started</button>
             </router-link>
-            <button class="btn btn-black z-depth-5">Donate To MissYou</button>
+            <button class="btn btn-black z-depth-5">
+              <a href="https://dashboard.flutterwave.com/donate/kqhqoh2pdof0" target="_blank" rel="noopener noreferrer">Donate To MissYou</a>
+            </button>
           </div>
       </div>
       

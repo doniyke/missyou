@@ -56,7 +56,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="btn btn-sm btn-purple" href="#" @click="pay()">Donate</a>
+                <a class="btn btn-sm btn-purple" href="https://dashboard.flutterwave.com/donate/kqhqoh2pdof0" target="_blank" @click="pay()">Donate</a>
               </li>
             </ul>
             <!-- Links -->
